@@ -25,15 +25,14 @@ app.get("/tables", function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/reseve", function (req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+app.get("/resevation", function (req, res) {
+    res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
 // Displays all tables
 app.get("/api/tables", function(req, res) {
     return res.json(tables);
   });
-
 //Table Info saved to this array
 var tables = [
 
