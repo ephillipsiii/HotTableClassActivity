@@ -16,8 +16,8 @@
       <h1>Hot Restaurant</h1>
       <h3>Book a table before they are all gone!</h3>
       <hr>
-      <a href="/add"><button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list"></span> View Tables</button></a>
-      <a href="/add"><button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-plus"></span> New Reservation</button></a>
+      <a href="/tables"><button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list"></span> View Tables</button></a>
+      <a href="/reservation"><button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-plus"></span> New Reservation</button></a>
     </div>
     <div class="row">
 
@@ -30,6 +30,31 @@
   </div>
 
   <script type="text/javascript">
+<<<<<<< HEAD
+  //   $("#search-btn").on("click", function() {
+  //     var searchedTable = $("#view reservations").val().trim();
+
+  //     // Using a RegEx Pattern to remove spaces from searchedCharacter
+  //     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+  //     searchedTable = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+  //     $.get("/api/characters/" + searched, function(data) {
+  //       console.log(data);
+  //       if (data) {
+  //         $("#stats").show();
+  //         $("#name").text(data.name);
+  //         $("#role").text(data.role);
+  //         $("#age").text(data.age);
+  //         $("#force-points").text(data.forcePoints);
+  //       }
+  //       else {
+  //         $("#name").text("The force is not strong with this one. Your character was not found.");
+  //         $("#stats").hide();
+  //       }
+  //     });
+  //   });
+  // </script>
+=======
     $("#search-btn").on("click", function() {
       var searchedTable = $("#view reservations").val().trim();
 
@@ -53,5 +78,6 @@
       });
     });
   </script>
+>>>>>>> 2c2466f20184a36dbc15505985b10d76aba81337
 </body>
 </html>
