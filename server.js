@@ -30,9 +30,9 @@ app.get("/reservation", function (req, res) {
 });
 
 // Displays all tables
-app.get("/api/tables", function(req, res) {
+app.get("/api/tables", function (req, res) {
     return res.json(tables);
-  });
+});
 
 //Table Info saved to this array
 var tables = [
@@ -45,25 +45,31 @@ var waitlist = [
 ]
 
 // Create New tables - takes in JSON input
-app.post("/api/tables", function(req, res) {
+app.post("/api/tables", function (req, res) {
+
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
     var newTable = req.body;
-  
+
     // Using a RegEx Pattern to remove spaces from newTable
     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
     newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
-  
+
     console.log(newTable);
-  
-    tables.push(newTable);
-  
+    switch (tables.length) {
+        case tables.length < 5:
+            tables.push(newTable);
+            break;
+        case tables.length >= 5:
+            waitlist.push(newTable);
+            break;
+    }
+
     res.json(newTable);
-  });
+});
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
-  });
-  
+});
