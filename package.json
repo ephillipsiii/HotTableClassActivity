@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "HotTableClassActivity",
   "version": "1.0.0",
   "description": "",
@@ -10,10 +11,18 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ephillipsiii/HotTableClassActivity.git"
+=======
+  "name": "finalApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> master
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "bugs": {
     "url": "https://github.com/ephillipsiii/HotTableClassActivity/issues"
   },
@@ -25,4 +34,13 @@
     "parser": "^0.1.4",
     "path": "^0.12.7"
   }
+=======
+  "dependencies": {
+    "body": "^5.1.0",
+    "parser": "^0.1.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "description": ""
+>>>>>>> master
 }
