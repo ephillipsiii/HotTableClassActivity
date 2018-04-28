@@ -52,28 +52,19 @@
   </div>
 
   <script type="text/javascript">
-    $("#search-btn").on("click", function() {
-      var searchedTable = $("#view reservations").val().trim();
+   $.get("/api/tables", function(data) {
+    for (var i = 0; i < data.length; i++) {
+      var wellSection = $("<div>");
+      wellSection.addClass("well");
+      wellSection.attr("id", "tables-well-" + i);
+      $("#well-section").append(wellSection);
 
-      // Using a RegEx Pattern to remove spaces from searchedCharacter
-      // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-      searchedTable = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-
-      $.get("/api/characters/" + searched, function(data) {
-        console.log(data);
-        if (data) {
-          $("#stats").show();
-          $("#name").text(data.name);
-          $("#role").text(data.role);
-          $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
-        }
-        else {
-          $("#name").text("The force is not strong with this one. Your character was not found.");
-          $("#stats").hide();
-        }
-      });
-    });
+      $("#tables-well-" + i).append("<h2>Name: " + data[i].name + "</h2>");
+      $("#tables-well-" + i).append("<h3>Phone Number: " + data[i].phoneNumber + "</h4>");
+      $("#tables-well-" + i).append("<h3>email: " + data[i].email + "</h4>");
+      $("#tables-well-" + i).append("<h3>Unique ID: " + data[i].uniqueId + "</h4>");
+    }
+  });
   </script>
 </body>
 </html>
