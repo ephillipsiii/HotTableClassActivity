@@ -59,7 +59,7 @@
       // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
       searchedTable = searchedCharacter.replace(/\s+/g, "").toLowerCase();
 
-      $.get("/api/creservations/" + searched, function(data) {
+      $.get("/api/reservations/" + searched, function(data) {
         console.log(data);
         if (data) {
           $("#stats").show();
