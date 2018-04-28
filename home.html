@@ -30,6 +30,7 @@
   </div>
 
   <script type="text/javascript">
+<<<<<<< HEAD
   //   $("#search-btn").on("click", function() {
   //     var searchedTable = $("#view reservations").val().trim();
 
@@ -53,5 +54,30 @@
   //     });
   //   });
   // </script>
+=======
+    $("#search-btn").on("click", function() {
+      var searchedTable = $("#view reservations").val().trim();
+
+      // Using a RegEx Pattern to remove spaces from searchedCharacter
+      // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+      searchedTable = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+      $.get("/api/reservations/" + searched, function(data) {
+        console.log(data);
+        if (data) {
+          $("#stats").show();
+          $("#name").text(data.name);
+          $("#phoneNumber").text(data.phoneNumber);
+          $("#email").text(data.email);
+          $("#uniqueId").text(data.uniqueId);
+        }
+        else {
+          $("#name").text("You have been placed on the wait list.");
+          $("#stats").hide();
+        }
+      });
+    });
+  </script>
+>>>>>>> 2c2466f20184a36dbc15505985b10d76aba81337
 </body>
 </html>
